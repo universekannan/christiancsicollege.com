@@ -26,6 +26,6 @@ Route::get('/fitness_and_yoga', [App\Http\Controllers\WebController::class, 'fit
 Route::get('/meditation_hall', [App\Http\Controllers\WebController::class, 'meditation_hall'])->name('meditation_hall');
 Route::get('/library', [App\Http\Controllers\WebController::class, 'library'])->name('library');
 Route::get('/facilities', [App\Http\Controllers\WebController::class, 'facilities'])->name('facilities');
-Route::get('/brochure', [App\Http\Controllers\WebController::class, 'brochure'])->name('brochure');
+Route::get('/brochures', [App\Http\Controllers\WebController::class, 'brochures'])->name('brochures');
 Route::get('/gallery', [App\Http\Controllers\WebController::class, 'gallery'])->name('gallery');
 Route::get('/contact', [App\Http\Controllers\WebController::class, 'contact'])->name('contact');

@@ -69,7 +69,7 @@
                      </ul>
                   </li>
                   <li><a href="{{ url('facilities') }}">FACILITIES</a></li>
-                  <li><a href="{{ url('brochure') }}">BROCHURE</a></li>
+                  <li><a href="{{ url('brochures') }}">BROCHURE</a></li>
                   <li><a href="{{ url('gallery') }}">GALLERY </a></li>
                   <li><a href="{{ url('contact') }}">CONTACT US</a></li>
                </ul>

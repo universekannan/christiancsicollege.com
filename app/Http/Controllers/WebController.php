@@ -90,7 +90,7 @@ class WebController extends Controller
     return view('facilities');
   } 
   
-   public function brochure(){
+   public function brochures(){
 	   $sql = " select * from brochure where status='Active'";
        $brochure = DB::select( DB::raw( $sql ) );
     return view( 'brochure', compact( 'brochure' ) );
