@@ -29,3 +29,4 @@ Route::get('/facilities', [App\Http\Controllers\WebController::class, 'facilitie
 Route::get('/brochures', [App\Http\Controllers\WebController::class, 'brochures'])->name('brochures');
 Route::get('/gallery', [App\Http\Controllers\WebController::class, 'gallery'])->name('gallery');
 Route::get('/contact', [App\Http\Controllers\WebController::class, 'contact'])->name('contact');
+Route::get('/admission', [App\Http\Controllers\WebController::class, 'admission'])->name('admission');
