@@ -97,7 +97,7 @@ body {
     <script type="text/javascript" src="{{ asset('js/hovers.js') }}"></script>
     <!-- Custom JS -->
     <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/menuscript.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/menuscript.js?v=2') }}"></script>
     <script type="text/javascript" src="{{ asset('engine1/jquery.js') }}"></script>
   <script type="text/javascript" src="{{ asset('engine1/wowslider.js') }}"></script>
   <script type="text/javascript" src="{{ asset('engine1/script.js') }}"></script>

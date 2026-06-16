@@ -9,6 +9,9 @@
       }, options);
 
       return this.each(function() {
+        if (cssmenu.hasClass("menumaker-initialized")) return;
+        cssmenu.addClass("menumaker-initialized");
+
         cssmenu.prepend('<div id="menu-button">' + settings.title + '</div>');
         $(this).find("#menu-button").on('click', function(){
           $(this).toggleClass('menu-opened');

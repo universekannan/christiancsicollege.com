@@ -51,6 +51,8 @@
     .filter-wrap {
       text-align: center;
       padding: 20px 0 15px;
+      overflow: visible;
+      width: 100%;
     }
     .filter-wrap a.sortLink {
       display: inline-block;
@@ -69,6 +71,13 @@
     .filter-wrap a.sortLink.active {
       background: #b50505;
       color: #fff;
+    }
+    @media (max-width: 767px) {
+      .filter-wrap a.sortLink {
+        font-size: 11px;
+        padding: 6px 10px;
+        margin: 3px 2px;
+      }
     }
 
     /* ===== PHOTO GRID ===== */
@@ -167,25 +176,29 @@
 
     /* ===== SECTION TAB SWITCHER (Photos / Videos) ===== */
     .section-tabs {
-    text-align: left;        /* Align buttons to the left */
-    display: flex;           /* Use flexbox for layout */
-    gap: 15px;               /* Gap between buttons */
-}
-
-.tab-btn {
-    /* Your existing button styles */
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    background-color: #eee;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.tab-btn.active {
-    background-color: #b50505;
-    color: #fff;
-}
+      text-align: left;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 5px 0;
+    }
+    .tab-btn {
+      padding: 9px 18px;
+      border: none;
+      cursor: pointer;
+      background-color: #eee;
+      border-radius: 4px;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+    .tab-btn.active {
+      background-color: #b50505;
+      color: #fff;
+    }
+    @media (max-width: 480px) {
+      .tab-btn { font-size: 13px; padding: 8px 14px; }
+      .section-tabs { gap: 8px; }
+    }
     /* Section panels */
     .section-panel { display: none; }
     .section-panel.active { display: block; }
@@ -283,12 +296,12 @@
           <div class="col-md-12" id="content-part"><h2 style="margin-top:0;"></h2></div>
 
           <!-- SECTION TAB SWITCHER -->
-          <div class="col-md-12">
-    <div class="section-tabs" style="text-align: left;margin-bottom: 30px;">
-        <button class="tab-btn active" data-tab="photos" style="margin-right: 15px;">&#128247; Photos</button>
-        <button class="tab-btn" data-tab="videos">&#9654; Videos</button>
-    </div>
-</div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="section-tabs" style="margin-bottom: 20px;">
+              <button class="tab-btn active" data-tab="photos">&#128247; Photos</button>
+              <button class="tab-btn" data-tab="videos">&#9654; Videos</button>
+            </div>
+          </div>
 <br><br>
           <!-- PHOTOS PANEL -->
           <div class="section-panel active" id="panel-photos">
@@ -597,8 +610,28 @@
   <!-- JS -->
   <script src="../js/jquery.js"></script>
   <script src="../js/bootstrap.min.js"></script>
-  <script src="../js/custom.js"></script>
-  <script src="../js/menuscript.js"></script>
+  <script src="../js/menuscript.js?v=2"></script>
+  <!-- Safe mobile menu init: runs after jQuery + menuscript are ready -->
+  <script>
+    (function($) {
+      $(document).ready(function() {
+        try {
+          if ($.fn.menumaker && !$('#cssmenu').hasClass('menumaker-initialized')) {
+            $('#cssmenu').menumaker({ title: 'Menu', format: 'multitoggle' });
+          }
+        } catch(e) {}
+
+        // Scroll-to-top button
+        $(window).scroll(function(){
+          $(this).scrollTop() > 300 ? $('.scrollToTop').fadeIn() : $('.scrollToTop').fadeOut();
+        });
+        $('.scrollToTop').click(function(){
+          $('html, body').animate({ scrollTop: 0 }, 800);
+          return false;
+        });
+      });
+    })(jQuery);
+  </script>
 
   <script>
     /* ============================================================
